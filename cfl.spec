@@ -1,17 +1,18 @@
 Summary:	Configuration File Library
 Summary(pl):	Biblioteka plików konfiguracyjnych
 Name:		cfl
-Version:	0.5.0
+Version:	0.8.0
 Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://freesoftware.fsf.org/download/cfl/%{name}-%{version}.tar.gz
-# Source0-md5:	b053f7741efe445af6470d543e0fb019
+# Source0-md5:	2db9b1023f29274057368ce73959639d
 Patch0:		%{name}-ac.patch
 URL:		http://www.freesoftware.fsf.org/cfl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdsl-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libcfl
 
@@ -31,7 +32,7 @@ wrapperów na bardzo wysokich poziomach jêzyków.
 Summary:	Header files and development documentation for Configuration File Library
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do biblioteki plików konfiguracyjnych
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libcfl-devel
 
 %description devel
@@ -58,12 +59,12 @@ Statyczna biblioteka plików konfiguracyjnych.
 %patch0 -p1
 
 %build
-rm -f missing
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
-
 %{__make}
 
 %install
@@ -71,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install src/example.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -80,18 +84,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_libdir}/*.so.*.*
+%doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc src/example.c doc/ref/html/{*.html,*.gif}
-%attr(755,root,root) %{_libdir}/*.so.?
+%doc doc/ref/html/{*.html,*.gif}
 %attr(755,root,root) %{_libdir}/*.so
-%{_libdir}/*.la
+%{_examplesdir}/%{name}-%{version}
 %{_includedir}/*.h
+%{_libdir}/*.la
 %{_mandir}/man3/*
 
 %files static
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/*.a
+%{_libdir}/*.a
