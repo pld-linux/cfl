@@ -1,7 +1,7 @@
 Summary:	Configuration File Library
 Summary(pl):	Biblioteka plików konfiguracyjnych
 Name:		cfl
-Version:	0.4
+Version:	0.5.0
 Release:	1
 License:	GPL v2
 Group:		Libraries
