@@ -1,0 +1,28 @@
+--- ./configure.in.org	Fri Jun 28 14:09:33 2002
++++ ./configure.in	Wed Jul  3 18:03:28 2002
+@@ -49,14 +49,17 @@
+ AM_PROG_LIBTOOL
+ 
+ dnl  gdsl library
+-AC_CHECK_HEADERS(gdsl.h,
+-		AC_CHECK_LIB(gdsl,gdsl_get_version_string,,AC_MSG_ERROR(Cannot find GDSL.)),
+-		AC_CHECK_HEADERS(gdsl/gdsl.h,
+-				AC_CHECK_LIB(gdsl,gdsl_get_version_string,
+-					CFLAGS="$CFLAGS -I/usr/local/include/gdsl"
+-					LIBS="$LIBS -lgdsl"
+-					,AC_MSG_ERROR(Cannot find GDSL.)),
+-				AC_MSG_ERROR(Cannot find GDSL.)))
++AC_CHECK_HEADER(gdsl.h,	, 
++		[ AC_CHECK_HEADER(gdsl/gdsl.h, [ 
++		 				AC_CHECK_LIB(gdsl,gdsl_get_version_string,
++							     CFLAGS="$CFLAGS -I/usr/local/include/gdsl -I/usr/include/gdsl"
++							     LIBS="$LIBS -lgdsl", 
++							     AC_MSG_ERROR(Cannot find GDSL.))
++						], [ AC_MSG_ERROR(Cannot find GDSL.)]
++				)
++		]
++		)
++AC_CHECK_LIB(gdsl, gdsl_get_version_string, [], AC_MSG_ERROR(Cannot find GDSL.))
+ 
+ AC_OUTPUT( 	        \
+ 	src/Makefile    \
