@@ -8,6 +8,8 @@ Group:		Libraries
 Source0:	http://freesoftware.fsf.org/download/cfl/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac.patch
 URL:		http://www.freesoftware.fsf.org/cfl/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gdsl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libcfl
@@ -56,7 +58,7 @@ Statyczna biblioteka plików konfiguracyjnych.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
@@ -68,11 +70,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -86,7 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.so
 %attr(755,root,root) %{_libdir}/*.la
 %{_includedir}/*.h
-
 %{_mandir}/man3/*
 
 %files static
