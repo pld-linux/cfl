@@ -86,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc src/example.c doc/ref/html/{*.html,*.gif}
 %attr(755,root,root) %{_libdir}/*.so.?
 %attr(755,root,root) %{_libdir}/*.so
-%attr(755,root,root) %{_libdir}/*.la
+%{_libdir}/*.la
 %{_includedir}/*.h
 %{_mandir}/man3/*
 
