@@ -1,8 +1,8 @@
---- cfl-0.5.0/configure.in.orig	Sun Feb 23 12:01:53 2003
-+++ cfl-0.5.0/configure.in	Sun Feb 23 12:05:04 2003
-@@ -64,7 +64,16 @@
- dnl Checks for header files.
+--- cfl-0.8.0.orig/configure.in	2003-04-25 16:35:31.000000000 +0200
++++ cfl-0.8.0.new/configure.in	2004-06-27 19:57:01.000000000 +0200
+@@ -40,7 +40,16 @@
  AC_HEADER_STDC
+ AC_CHECK_HEADERS([stddef.h])
  AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
 -AC_CHECK_HEADER(gdsl.h,	[], AC_CHECK_HEADER(gdsl/gdsl.h, [CFLAGS="-I/usr/local/include/gdsl $CFLAGS"], AC_MSG_ERROR([Cannot find GDSL header.])))
 +AC_CHECK_HEADER(gdsl.h,        ,
@@ -18,3 +18,12 @@
  
  # Checks for typedefs, structures, and compiler characteristics.
  AC_C_CONST
+@@ -48,7 +57,7 @@
+ 
+ # Checks for library functions.
+ AC_CHECK_FUNCS([strtol])
+-AM_FUNC_STRTOD
++AC_FUNC_STRTOD
+ 
+ AC_OUTPUT( 	        \
+ 	src/Makefile    \
