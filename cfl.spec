@@ -20,7 +20,7 @@ to be written for very high level languages.
 
 %description -l pl
 Biblioteka plików konfiguracyjnych (CFL: Configuration File Library)
-jest kolekcj± funkcji do manupulowania plikami konfiguracyjnymi. CFL
+jest zestawem funkcji do obróbki plików konfiguracyjnych. CFL
 dostarcza nowoczesne API dla programistów C, pozwalaj±c na pisanie
 wrapperów na bardzo wysokich poziomach jêzyków.
 
