@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Libraries
 Source0:	http://freesoftware.fsf.org/download/cfl/%{name}-%{version}.tar.gz
+# Source0-md5:	b053f7741efe445af6470d543e0fb019
 Patch0:		%{name}-ac.patch
 URL:		http://www.freesoftware.fsf.org/cfl/
 BuildRequires:	autoconf
