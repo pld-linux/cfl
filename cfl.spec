@@ -5,16 +5,16 @@ Version:	0.8.0
 Release:	1
 License:	GPL v2
 Group:		Libraries
-Source0:	http://freesoftware.fsf.org/download/cfl/%{name}-%{version}.tar.gz
+Source0:	http://savannah.nongnu.org/download/cfl/%{name}-%{version}.tar.gz
 # Source0-md5:	2db9b1023f29274057368ce73959639d
 Patch0:		%{name}-ac.patch
-URL:		http://www.freesoftware.fsf.org/cfl/
+URL:		http://www.nongnu.org/cfl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdsl-devel
 BuildRequires:	libtool
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libcfl
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Configuration File Library (CFL) is a collection of routines for
