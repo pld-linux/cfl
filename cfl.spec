@@ -5,10 +5,10 @@ Version:	0.8.0
 Release:	1
 License:	GPL v2
 Group:		Libraries
-Source0:	http://savannah.nongnu.org/download/cfl/%{name}-%{version}.tar.gz
+Source0:	http://download.gna.org/cfl/%{name}-%{version}.tar.gz
 # Source0-md5:	2db9b1023f29274057368ce73959639d
 Patch0:		%{name}-ac.patch
-URL:		http://www.nongnu.org/cfl/
+URL:		http://home.gna.org/cfl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdsl-devel
