@@ -1,5 +1,5 @@
 Summary:	Configuration File Library
-Summary(pl):	Biblioteka plik體 konfiguracyjnych
+Summary(pl.UTF-8):   Biblioteka plik贸w konfiguracyjnych
 Name:		cfl
 Version:	0.8.0
 Release:	1
@@ -22,15 +22,15 @@ manipulating configuration files. CFL provides a modern Applications
 Programming Interface (API) for C programmers, while allowing wrappers
 to be written for very high level languages.
 
-%description -l pl
-Biblioteka plik體 konfiguracyjnych (CFL: Configuration File Library)
-jest zestawem funkcji do obr骲ki plik體 konfiguracyjnych. CFL
-dostarcza nowoczesne API dla programist體 C, pozwalaj眂 na pisanie
-wrapper體 na bardzo wysokich poziomach j陑yk體.
+%description -l pl.UTF-8
+Biblioteka plik贸w konfiguracyjnych (CFL: Configuration File Library)
+jest zestawem funkcji do obr贸bki plik贸w konfiguracyjnych. CFL
+dostarcza nowoczesne API dla programist贸w C, pozwalaj膮c na pisanie
+wrapper贸w na bardzo wysokich poziomach j臋zyk贸w.
 
 %package devel
 Summary:	Header files and development documentation for Configuration File Library
-Summary(pl):	Pliki nag丑wkowe i dokumentacja do biblioteki plik體 konfiguracyjnych
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe i dokumentacja do biblioteki plik贸w konfiguracyjnych
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libcfl-devel
@@ -39,20 +39,20 @@ Obsoletes:	libcfl-devel
 Header files and development documentation for Configuration File
 Library.
 
-%description devel -l pl
-Pliki nag丑wkowe i dokumentacja do biblioteki plik體 konfiguracyjnych.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe i dokumentacja do biblioteki plik贸w konfiguracyjnych.
 
 %package static
 Summary:	Static Log Writer Library
-Summary(pl):	Statyczna biblioteka plik體 konfiguracyjnych
+Summary(pl.UTF-8):   Statyczna biblioteka plik贸w konfiguracyjnych
 Group:		Development/Libraries
 Obsoletes:	libcfl-static
 
 %description static
 Static Log Writer Library.
 
-%description static -l pl
-Statyczna biblioteka plik體 konfiguracyjnych.
+%description static -l pl.UTF-8
+Statyczna biblioteka plik贸w konfiguracyjnych.
 
 %prep
 %setup -q
