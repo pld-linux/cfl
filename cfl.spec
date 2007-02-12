@@ -1,5 +1,5 @@
 Summary:	Configuration File Library
-Summary(pl.UTF-8):   Biblioteka plików konfiguracyjnych
+Summary(pl.UTF-8):	Biblioteka plików konfiguracyjnych
 Name:		cfl
 Version:	0.8.0
 Release:	1
@@ -30,7 +30,7 @@ wrapperów na bardzo wysokich poziomach języków.
 
 %package devel
 Summary:	Header files and development documentation for Configuration File Library
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do biblioteki plików konfiguracyjnych
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do biblioteki plików konfiguracyjnych
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	libcfl-devel
@@ -44,7 +44,7 @@ Pliki nagłówkowe i dokumentacja do biblioteki plików konfiguracyjnych.
 
 %package static
 Summary:	Static Log Writer Library
-Summary(pl.UTF-8):   Statyczna biblioteka plików konfiguracyjnych
+Summary(pl.UTF-8):	Statyczna biblioteka plików konfiguracyjnych
 Group:		Development/Libraries
 Obsoletes:	libcfl-static
 
